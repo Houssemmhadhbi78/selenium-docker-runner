@@ -31,7 +31,7 @@ services:
       - BROWSER=chrome
       - MODULE=book-flight-module.xml
     volumes:
-      - C:\Users\user\output\book-result:/usr/share/udemy/test-output
+      - ./output/book-result:/usr/share/udemy/test-output
   search-module:
     image: hmhadhbi84/selenium-docker
     depends_on:
@@ -42,4 +42,4 @@ services:
       - BROWSER=chrome
       - MODULE=search-module.xml
     volumes:
-      - C:\Users\user\output\search-result:/usr/share/udemy/test-output
+      - ./output/search-result:/usr/share/udemy/test-output
