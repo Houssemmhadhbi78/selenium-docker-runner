@@ -4,7 +4,7 @@ pipeline {
         stage('Run Test') {
             steps {
                 //sh
-                bat "docker-compose up -d --scale chrome=4 --scale firefox=5"
+                bat "docker-compose up --scale chrome=3 --scale firefox=3 --no-colors"
             }
         }
         stage('Bring Grid Down') {
