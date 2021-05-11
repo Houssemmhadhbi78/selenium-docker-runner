@@ -5,6 +5,7 @@ pipeline {
             steps{
 				bat "docker pull hmhadhbi84/selenium-docker"
 			}
+		}
         stage('Start Grid') {
             
 			steps {
@@ -17,12 +18,12 @@ pipeline {
                 //sh
                 bat "docker-compose up search-module book-flight-module"
             }
-        }        
+        }
+		stage('Stop Grid') {
+            steps {
+                //sh
+                bat "docker-compose down"
+            }
+        } 
     }
-	post{
-		always{
-			archiveArtifacts artifacts: 'C:Users\user/output/**'
-			bat "docker-compose down"			
-		}
-	}
 }
