@@ -2,8 +2,7 @@ version: "3"
 services:
   hub:
     image: selenium/hub:3.141.59
-    ports:
-      - "4444:4444"
+    
   chrome:
     image: selenium/node-chrome:3.141.59
     shm_size: '4gb' 
@@ -29,10 +28,10 @@ services:
       - firefox
     environment:
       - HUB_HOST=hub
-      - BROWSER=firefox
+      - BROWSER=chrome
       - MODULE=book-flight-module.xml
     volumes:
-      - C:\Users\user\book-result:/usr/share/udemy/test-output
+      - C:\Users\user\output\book-result:/usr/share/udemy/test-output
   search-module:
     image: hmhadhbi84/selenium-docker
     depends_on:
@@ -40,7 +39,7 @@ services:
       - firefox
     environment:
       - HUB_HOST=hub
-      - BROWSER=chrome
+      - BROWSER=firefox
       - MODULE=search-module.xml
     volumes:
-      - C:\Users\user\search-result:/usr/share/udemy/test-output
+      - C:\Users\user\output\search-result:/usr/share/udemy/test-output
