@@ -19,6 +19,7 @@ pipeline {
                 bat "docker-compose up --no-color search-module book-flight-module"
             }
         }
+	}
 		post{
 		always{
 			archiveArtifacts artifacts: 'output/**'
@@ -26,5 +27,4 @@ pipeline {
 			
 			}
 		}
-    }
 }
