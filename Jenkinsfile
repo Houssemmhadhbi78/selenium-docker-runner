@@ -22,6 +22,7 @@ pipeline {
 	}
 	post('Stop Grid with Post') {
 		always{
+			archiveArtifacts artifacts: 'output/**'
 			bat "docker-compose down"
 		}
 	}
