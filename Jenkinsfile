@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-		stage('Pull Latest Image') {
+		stage('Pull Latest Image hmhadhbi84') {
             steps{
 				bat "docker pull hmhadhbi84/selenium-docker"
 			}
@@ -20,7 +20,7 @@ pipeline {
             }
         }
 	}
-	post('Stop Grid') {
+	post('Stop Grid with Post') {
 		always{
 			bat "docker-compose down"
 		}
