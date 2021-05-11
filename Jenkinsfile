@@ -20,11 +20,9 @@ pipeline {
             }
         }
 	}
-		post{
+	post('Stop Grid') {
 		always{
-			
 			bat "docker-compose down"
-			
-			}
 		}
+	}
 }
