@@ -39,7 +39,7 @@ services:
       - firefox
     environment:
       - HUB_HOST=hub
-      - BROWSER=firefox
+      - BROWSER=chrome
       - MODULE=search-module.xml
     volumes:
       - C:\Users\user\output\search-result:/usr/share/udemy/test-output
